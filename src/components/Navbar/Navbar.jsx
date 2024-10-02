@@ -7,8 +7,8 @@ const Navbar = () => {
       <div className='navbar__options'>
         <select name="algorithm" id="select__algo">
           <option value="BFS">Breadth-First Search</option>
-          <option value="BFS">Depth-First Search</option>
-          <option value="BFS">Dijkstra's</option>
+          <option value="DFS">Depth-First Search</option>
+          <option value="Dijkstra">Dijkstra's</option>
         </select>
         <p>Reset</p>
         <p>Clear Walls</p>
