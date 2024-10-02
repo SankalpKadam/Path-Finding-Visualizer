@@ -8,8 +8,8 @@ const StartNode = () => {
     'height':'100%',
     'color':'#e21c1c',
     'display':'flex',
-    'justify-content':'center',
-    'align-items':'center'
+    'justifyContent':'center',
+    'alignItems':'center'
   }
   const onDragStart = (e)=>{
     console.log(e.target);
