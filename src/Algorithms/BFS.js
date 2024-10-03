@@ -58,22 +58,22 @@ function BFS(start_node, target_node, level){
         }
     }
     console.log('End')
-}
-
-function DrawPath(obj){
-    let ids = [];
-    let node = obj[`${14}-${35}`]//replace with the x and y for goal node
-
-    while (node){
-        ids.push(node.id)
-        node = node.parent
-    }
-    for (let index = ids.length-1; index >= 0; index--) {
-        setTimeout(()=>{
-            document.getElementById(ids[index]).style.backgroundColor="#f8ef1f"
-        },250-index*100)
-    }
+    function DrawPath(obj){
+        let ids = [];
+        let node = obj[`${target_node[0]}-${target_node[1]}`]//replace with the x and y for goal node
     
-
+        while (node){
+            ids.push(node.id)
+            node = node.parent
+        }
+        for (let index = ids.length-1; index >= 0; index--) {
+            setTimeout(()=>{
+                document.getElementById(ids[index]).style.backgroundColor="#f8ef1f"
+            },250-index*100)
+        }
+        
+    
+    }
 }
+
 export default BFS
