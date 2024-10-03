@@ -11,23 +11,27 @@ const Node = ({row, col}) => {
     const start = useSelector(startNode)
     const target = useSelector(targetNode)
     const [type, setType] = useState('')
+    const [clicked, setClicked] = useState(false)
     const dispatch = useDispatch();
-    const handleClick = ()=>{
-        if(!start){
-            setType('start')
-            // myRef.current.appendChild(<StartNode/>)
-            dispatch(setStartNode({
-                start:[row, col]
-            }))
+    const handleClick = (e)=>{
+        
+        if(!clicked){
+
+            setClicked(true)
+            if(!start){
+                setType('start')
+                dispatch(setStartNode({
+                    start:[row, col]
+                }))
+            }
+            else if(!target){
+                setType('target')
+                dispatch(setTargetNode({
+                    target:[row,col]
+                }))
+            }
+            console.log(e.target);
         }
-        else if(!target){
-            setType('target')
-            // myRef.current.appendChild(<TargetNode/>)
-            dispatch(setTargetNode({
-                target:[row,col]
-            }))
-        }
-        myRef.current.onClick = ()=>{}
         
     }
     const myRef = useRef()
