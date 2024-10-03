@@ -1,6 +1,10 @@
 import React from 'react'
 import './index.css'
+import BFS from '../../Algorithms/BFS'
 const Navbar = () => {
+  const myBFS = (e)=>{
+    BFS([0,0],[14,35],0)
+  }
   return (
     <div className='navbar'>
       <p className='navbar__logo'>PathFinding <span>Visualizer</span></p>
@@ -12,7 +16,7 @@ const Navbar = () => {
         </select>
         <p>Reset</p>
         <p>Clear Walls</p>
-        <button>Visualize!</button>
+        <button onClick={myBFS}>Visualize!</button>
       </div>
     </div>
   )
