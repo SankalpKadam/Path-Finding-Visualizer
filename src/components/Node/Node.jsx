@@ -13,8 +13,8 @@ const Node = ({row, col}) => {
     return (
         <div className='node' id={`${row}-${col}`} onClick={handleClick}>
             {
-                (row === 11 && col === 6)  ? <StartNode/> :
-                (row === 14 && col === 5) && <TargetNode/>
+                (row === 0 && col === 0)  ? <StartNode/> :
+                ((row === 14 && col === 35) && <TargetNode/>)
             }
         </div>
     )
