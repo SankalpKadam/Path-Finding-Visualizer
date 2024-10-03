@@ -3,8 +3,8 @@ import { createSlice } from "@reduxjs/toolkit";
 export const nodeSlice = createSlice({
     name:'node',
     initialState:{
-        start:[7,5],
-        target:[14,8]
+        start:null,
+        target:null
     },
     reducers:{
         setStartNode:(state, action)=>{
