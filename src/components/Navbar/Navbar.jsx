@@ -1,9 +1,16 @@
 import React from 'react'
 import './index.css'
 import BFS from '../../Algorithms/BFS'
+import { useSelector } from 'react-redux'
+import { startNode, targetNode } from '../../store/slices/nodeSlice'
 const Navbar = () => {
+  const start = useSelector(startNode)
+  const target = useSelector(targetNode)
   const myBFS = (e)=>{
-    BFS([0,0],[14,35],0)
+    if(start && target){
+
+      BFS(start,target,0)
+    }
   }
   return (
     <div className='navbar'>
