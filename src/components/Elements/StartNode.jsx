@@ -16,7 +16,7 @@ const StartNode = () => {
     
   }
   return (
-    <div className='startnode' style={myStyle} draggable onDragStart={onDragStart}>
+    <div id='startnode' style={myStyle} draggable onDragStart={onDragStart}>
       <PlayArrowIcon/>
     </div>
   )

@@ -16,7 +16,7 @@ const TargetNode = () => {
         
       }
   return (
-    <div className='endnode' style={myStyle} draggable onDragStart={onDragStart}>
+    <div id='endnode' style={myStyle} draggable onDragStart={onDragStart}>
       <AdjustIcon/>
     </div>
   )
