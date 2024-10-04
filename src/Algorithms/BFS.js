@@ -31,7 +31,6 @@ function BFS(start_node, target_node, level){
             setTimeout(()=>{
                 try {
                     
-                    console.log(`${x}-${y}, color`)
                     document.getElementById(`${x}-${y}`).style.backgroundColor="#6695b7"
                 } catch (error) {
                     console.log(error);
