@@ -1,13 +1,16 @@
 .board{
-    /* height: 70%; */
+    height: 70%;
     width: 90%;
-    display: flex;
-    flex-direction: row;
-    gap: 1px;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    align-items: center;
-    align-content: flex-start;
     max-width: 1500px;
     padding: 0;
+    border-collapse: collapse;
+}
+
+tr{
+    width: 100%;
+    height: calc(100%/50);
+}
+td{
+    width: calc(100%/50);
+    height: 25px;
 }

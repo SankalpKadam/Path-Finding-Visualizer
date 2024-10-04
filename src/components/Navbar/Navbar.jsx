@@ -25,20 +25,14 @@ const Navbar = () => {
     }
   }
   const removeBg = ()=>{
-    for(let i = 0; i<15;i++){
-      for(let j =0;j<35;j++){
+    for(let i = 0; i<25;i++){
+      for(let j =0;j<50;j++){
         document.getElementById(`${i}-${j}`).style.backgroundColor="#353434"
       }
     }
   }
   const Reset = (e)=>{
     removeBg()
-    dispatch(setStartNode({
-      start: null
-    }))
-    dispatch(setTargetNode({
-      target:null
-    }))
     setSelected('')
   }
   return (

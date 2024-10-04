@@ -5,9 +5,9 @@ const Board = () =>{
     const [nodes, setNodes] = useState([])
     useEffect(()=>{
         let nodes = []
-        for(let i = 0; i< 15; i++){
+        for(let i = 0; i< 25; i++){
             let temp = []
-            for (let j =0 ; j< 36; j++){
+            for (let j =0 ; j< 50; j++){
                 temp.push(0)
             }
             nodes.push(temp)
@@ -16,18 +16,27 @@ const Board = () =>{
         
     },[])
     return (
-        <div className="board">
+        <table className="board" cellSpacing={"0"}>
+            <tbody>
             {
                 nodes.map((row, rowIndex)=>{
-                    return (<>
+                    return (<tr>
                     {
 
-                        row.map((col, colIndex)=><Node row={rowIndex} col={colIndex}/>)
+                        row.map((col, colIndex)=>{
+                        return (<td>
+                            
+                            <Node row={rowIndex} col={colIndex}/>
+                        </td>)
+                    })
                     }
-                    </>)
+                    </tr>)
                 })
             }
-        </div>
+                
+                
+            </tbody>
+        </table>
     )
 }
 
