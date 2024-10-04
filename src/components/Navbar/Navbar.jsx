@@ -1,18 +1,20 @@
 import React, { useState } from 'react'
 import './index.css'
 import BFS from '../../Algorithms/BFS'
-import { useSelector } from 'react-redux'
-import { startNode, targetNode } from '../../store/slices/nodeSlice'
+import { useDispatch, useSelector } from 'react-redux'
+import { setStartNode, setTargetNode, startNode, targetNode } from '../../store/slices/nodeSlice'
 import { DFS } from '../../Algorithms/DFS'
 const Navbar = () => {
   const start = useSelector(startNode)
   const target = useSelector(targetNode)
   const [selected, setSelected] = useState('')
+  const dispatch = useDispatch()
   // const options = {
   //   BFS:BFS(start, target, 0),
   //   DFS:DFS(start, target,0)
   // }
   const myBFS = (e)=>{
+    removeBg()
     if(start && target){
       console.log(selected);
       
@@ -21,6 +23,23 @@ const Navbar = () => {
       else alert('Select an algo')
       setSelected('')
     }
+  }
+  const removeBg = ()=>{
+    for(let i = 0; i<15;i++){
+      for(let j =0;j<35;j++){
+        document.getElementById(`${i}-${j}`).style.backgroundColor="#353434"
+      }
+    }
+  }
+  const Reset = (e)=>{
+    removeBg()
+    dispatch(setStartNode({
+      start: null
+    }))
+    dispatch(setTargetNode({
+      target:null
+    }))
+    setSelected('')
   }
   return (
     <div className='navbar'>
@@ -31,7 +50,7 @@ const Navbar = () => {
           <option value="DFS" onClick={(e)=>setSelected(e.target.value)}>Depth-First Search</option>
           <option value="Dijkstra" onClick={(e)=>setSelected(e.target.value)}>Dijkstra's</option>
         </select>
-        <p>Reset</p>
+        <p onClick={Reset}>Reset</p>
         <p>Clear Walls</p>
         <button onClick={myBFS}>Visualize!</button>
       </div>
