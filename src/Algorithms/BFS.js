@@ -26,7 +26,7 @@ function BFS(start_node, target_node, level){
             },250+temp*100)
             break
         }
-        else if(0<=x && x<15 && 0<=y && y<36 && !visited[`${x}-${y}`] ){
+        else if(0<=x && x<25 && 0<=y && y<50 && !visited[`${x}-${y}`] ){
             // console.log('Current processsed = '+x+" ,"+y)
             setTimeout(()=>{
                 try {
