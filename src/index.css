@@ -18,7 +18,9 @@ div, p, button, span{
   margin: 0;
   padding: 0;
 }
-
+*{
+  transition: all 0.1s ease-in-out;
+}
 #root{
   width: 100vw;
   height: 100vh;
