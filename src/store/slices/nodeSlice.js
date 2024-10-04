@@ -4,7 +4,8 @@ export const nodeSlice = createSlice({
     name:'node',
     initialState:{
         start:null,
-        target:null
+        target:null,
+        type:null,
     },
     reducers:{
         setStartNode:(state, action)=>{
@@ -12,13 +13,16 @@ export const nodeSlice = createSlice({
         },
         setTargetNode:(state, action)=>{
             state.target = action.payload.target
+        },
+        setDragType:(state, action)=>{
+            state.type = action.payload.type
         }
     },
 });
 
-export const {setStartNode, setTargetNode} = nodeSlice.actions;
+export const {setStartNode, setTargetNode, setDragType} = nodeSlice.actions;
 
 export const startNode = (state)=>state.node.start;
 export const targetNode = (state) => state.node.target;
-
+export const dragNode= (state)=>state.node.type;
 export default nodeSlice.reducer;
