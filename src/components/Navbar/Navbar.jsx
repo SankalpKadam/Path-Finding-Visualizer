@@ -33,6 +33,12 @@ const Navbar = () => {
   }
   const Reset = (e)=>{
     removeBg()
+    dispatch(setStartNode({
+      start:null
+    }))
+    dispatch(setTargetNode({
+      target:null
+    }))
     setSelected('')
   }
   return (
