@@ -4,6 +4,7 @@ import BFS from '../../Algorithms/BFS'
 import { useDispatch, useSelector } from 'react-redux'
 import { setStartNode, setTargetNode, startNode, targetNode } from '../../store/slices/nodeSlice'
 import { DFS } from '../../Algorithms/DFS'
+import Dijkstra from '../../Algorithms/Dijkstra'
 const Navbar = () => {
   const start = useSelector(startNode)
   const target = useSelector(targetNode)
@@ -20,6 +21,7 @@ const Navbar = () => {
       
       if(selected === 'BFS') BFS(start,target,0)
       else if (selected === 'DFS') DFS(start, target,0)
+      else if (selected == 'Dijkstra') Dijkstra(start, target)
       else alert('Select an algo')
       setSelected('')
     }
